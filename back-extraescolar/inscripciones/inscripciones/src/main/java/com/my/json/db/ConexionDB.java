@@ -16,9 +16,14 @@ public final class ConexionDB {
         HikariConfig config = new HikariConfig();
         config.setPoolName("inscripciones-pool");
         config.setDriverClassName("org.postgresql.Driver");
-        config.setJdbcUrl(obtener("DB_URL", "jdbc:postgresql://localhost:5432/inscripciones?stringtype=unspecified"));
-        config.setUsername(obtener("DB_USER", "postgres"));
-        config.setPassword(obtener("DB_PASSWORD", "Oqpwwpqo7"));
+
+        config.setJdbcUrl(obtener(
+                "DB_URL",
+                "jdbc:postgresql://dpg-dc35ne8m7kps73d8sn8g-a:5432/actividades_complementarias_bd?sslmode=require&stringtype=unspecified"
+        ));
+        config.setUsername(obtener("DB_USER", "palito"));
+        config.setPassword(obtener("DB_PASSWORD", "nff35zUR6vloL5oElDPHwQjxoV63Jex9"));
+
         config.setMaximumPoolSize(entero("DB_MAX_POOL_SIZE", 10));
         config.setMinimumIdle(entero("DB_MIN_IDLE", 2));
         config.setConnectionTimeout(30000);
